@@ -1,5 +1,9 @@
 class PageController < ApplicationController
 
+  def help
+    @title = "Help"
+  end
+
   def home
     @title = "Home"
     @content = "Welcome to the homepage"
