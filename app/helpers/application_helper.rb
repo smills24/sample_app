@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   #Return a title on a page
-  def title
+  def pagetitle
     base_title = "Steph's app"
     if @title.nil?
       base_title

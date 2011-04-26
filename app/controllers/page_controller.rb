@@ -10,7 +10,6 @@ class PageController < ApplicationController
 
   def contact
     @title = "Contact"
-
   end
 
   def about

@@ -1,0 +1,15 @@
+%table.user
+  %tr 
+    %td.main
+      %h1
+        = gravatar_for @user
+        = @user.name
+    %td.side.round 
+      %b User:
+      = @user.name
+      %b URL:
+      = link_to user_path(@user), @user
+  %tr 
+    %td.profile 
+      This is the profile of 
+      =@user.name
