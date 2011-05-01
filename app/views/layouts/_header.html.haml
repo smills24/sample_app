@@ -5,4 +5,9 @@
   |
   = link_to "Help", help_path
   |        
-  = link_to "Sign in", '#'
+  - if signed_in?
+    = link_to "Profile", current_user
+    |
+    = link_to "Sign out", signout_path, :method => :delete
+  - else
+    = link_to "Sign in", signin_path
