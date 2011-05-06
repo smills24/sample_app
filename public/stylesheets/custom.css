@@ -7,6 +7,15 @@ img#octopus {
   
 }
 
+a.signup-button {
+  font-size: 22px;
+  background-color: navy;
+  padding: 5px;
+  font-style: bold;
+  color: white;
+  text-align: center;
+}
+
 .container {
   width: 710px;
   position: relative;
@@ -51,9 +60,6 @@ a:hover {
   color: #000;
 }
 
-a:visited {
-  color: gray;
-}
 
 /* Navigation */
 
@@ -149,7 +155,7 @@ div.field, div.actions {
   font-size: 10;
 }
 
-.error_explanation h2 {
+.error_explanation h2 {text-align
   text-align: left;
   font-weight: bold;
   padding: 4px 4px 4px 4px;
@@ -168,4 +174,7 @@ div.flash.success {
   background-color: #f0f0f0;
   border: 2px solid #33cccc;
 }
+
+
+
 

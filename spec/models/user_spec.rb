@@ -135,7 +135,7 @@ end
   describe "sign in/out" do
     
     it "should not sign in blank users" do
-      visit signin_path
+      visit '/signin_path'
       fill_in :email, :with => ""
       fill_in :password, :with => ""
       click_button
@@ -146,7 +146,7 @@ end
   describe "success" do
     it "should sign in a valid user" do
       user = Factory(:user)
-      visit signin_path
+      visit '/signin_path'
       fill_in :email, :with => @user.email
       fill_in :password, :with => @user.password
       click_button
@@ -159,6 +159,24 @@ end
 
 
 end
+
+
+  describe "admin users" do
+
+    before(:each) do
+      @user = User.create!(@attr)
+    end
+
+    it "should respond to admin" do
+      @user.should respond_to(:admin)
+    end
+
+    it "should be convertible to admin" do
+      @user.toggle!(:admin)
+      @user.should be_admin
+    end
+
+  end
 
 end
 
