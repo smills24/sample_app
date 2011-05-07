@@ -7,6 +7,7 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'mysql2', '0.2.7', :group => :production
+gem 'will_paginate', '3.0.pre2'
 
 group :development, :test do
 	gem 'rspec-rails', '2.5.0'
@@ -17,7 +18,6 @@ group :development, :test do
   gem 'gravatar_image_tag', '1.0.0.pre2'
   gem 'haml'
   gem 'faker', '0.3.1'
-  gem 'will_paginate', '3.0.pre2'
 end
 
 
