@@ -6,7 +6,7 @@ gem 'rails', '3.0.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
-gem 'mysql2', :group => :production
+gem 'mysql2', '0.2.7', :group => :production
 
 group :development, :test do
 	gem 'rspec-rails', '2.5.0'
