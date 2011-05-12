@@ -12,7 +12,9 @@
 require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :species
+
+  has_many :microposts, :dependent => :destroy
 
   regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -21,6 +23,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => true,
                     :format => {:with => regex },
                     :uniqueness => { :case_sensitive => false }
+
+  validates :species, :presence => true
 
   validates :password, :presence => true,
                        :confirmation => true,
@@ -41,6 +45,10 @@ class User < ActiveRecord::Base
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
+  end
+
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   private

@@ -1,5 +1,17 @@
-%h1= @title
-%p Welcome to Octopi crossing, the only social networking site exclusively for salt water fish and aquatic animals. Join now to connect with all of your oceanic pals.
+- if signed_in?
+  %h1 Whats up?
+  %table.front
+    %tr
+      %td.main
+        = render 'shared/micropost_form'
+        = render 'shared/feed'
+      %td.side.round
+        = render 'shared/user_info'
+-else
+  %h1= @title  
+  %center
+    = image_tag("manatee.gif")
 
-= link_to "Sign up now!", signup_path, :class => "signup-button round", :style => "font-color:white"
+    %p Welcome to the  only social networking site exclusively for salt water fish and aquatic animals. Join now to connect with all of your oceanic pals.
 
+    = link_to "Sign up now!", signup_path, :class => "signup-button round", :style => "font-color:white;"

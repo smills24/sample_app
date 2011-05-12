@@ -63,6 +63,14 @@ render_views
       @user = Factory(:user)
     end
 
+   it "should display user microposts" do
+      mp1 = Factory(:micropost, :user => @user, :content => "Lorem ipsum")
+      mp2 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      get :show, :id => @user
+      response.should have_selector('span.content', :content => mp1.content)
+      response.should have_selector('span.content', :content => mp2.content)
+   end
+
    it "should be successful" do
       get :show, :id => @user
       response.should be_success
@@ -106,9 +114,8 @@ end
   describe "POST 'create'" do
 
     describe "failure" do
-      
       before(:each) do
-        @attr = { :name => "", :email => "", :password => "", :password_confirmation => "" }
+        @attr = { :name => "", :email => "", :password => "", :password_confirmation => "", :species => ""}
       end
       
       it "should not create a user" do
@@ -136,7 +143,8 @@ end
         @attr = { :name => "Steph Mills", 
                   :email=> "steph@gmail.com", 
                   :password => "stephiscool", 
-                  :password_confirmation => "stephiscool" }        
+                  :password_confirmation => "stephiscool",
+                  :species => "Manatee"}        
       end
 
       it "should create a new user" do
@@ -222,7 +230,7 @@ end
     
     before(:each) do
       @attr = { :name => "New name", :email => "user@user.com",
-                :password => "foobar", :password_confirmation => "foobar" }
+                :password => "foobar", :password_confirmation => "foobar", :species => "Manatee" }
     end
 
     it "should change the users info" do

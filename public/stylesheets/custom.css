@@ -16,6 +16,10 @@ a.signup-button {
   text-align: center;
 }
 
+a.signup-button:hover {
+    color: white;
+}
+
 .container {
   width: 710px;
   position: relative;
@@ -176,5 +180,29 @@ div.flash.success {
 }
 
 
+table.microposts {
+  padding: 1 em;
+}
 
+span.timestamp {
+  font-size: 10px;
+  color: gray;
+}
+
+table.user tr td.gravatar {
+  border: 1px solid #ccc;
+  vertical-align: top;
+  width: 50px;
+}
+
+table.microposts tr td.microposts {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+textarea#micropost_content {
+  width: 500px;
+  height: 2.5 em;
+}
 

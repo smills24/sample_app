@@ -4,11 +4,22 @@
       %h1
         = gravatar_for @user
         = @user.name
+        the
+        = @user.species
+      - unless @user.microposts.empty?
+        %table.microposts
+          = render @microposts
+        = will_paginate @microposts
+
     %td.side.round 
       %b User:
       = @user.name
+      %br
       %b URL:
       = link_to user_path(@user), @user
+      %br
+      %b Microposts:
+      = @user.microposts.count
   %tr 
     %td.profile 
       This is the profile of 

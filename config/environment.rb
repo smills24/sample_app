@@ -6,3 +6,5 @@ require File.expand_path('../application', __FILE__)
 SampleApp::Application.initialize!
 
 require 'will_paginate'
+SPECIES = ["Manatee", "Jellyfish", "Immortal Jellyfish", "Dolphin", "Octopus", "Squid", "Starfish", "Swordfish", "Clam", "Whale", "Blowfish"]
+
